@@ -14,7 +14,7 @@ Silk Linux is an Arch-based GNU/Linux distribution with an obsessive focus on **
 - **Arch-based** — pacman, AUR, rolling release, all the Arch goodness
 - **Pre-built binaries** — no compiling, just install and go
 - **Silk Packages** — universal CLI tools that work on any Linux distro
-- **Three kernel flavors** — Latest-Silk, Asahi-Based Silk (Apple Silicon), and Optimized Silk
+- **Three kernel flavors** — Latest-Silk, Asahi-Based Silk (Apple Silicon), and Optimized Silk (adding surface later)
 - **Full driver coverage** — AMD, Intel, NVIDIA (open + blob), Realtek, MediaTek, Broadcom WiFi
 
 ---
@@ -24,7 +24,7 @@ Silk Linux is an Arch-based GNU/Linux distribution with an obsessive focus on **
 | Edition | Target | Size | Type |
 |---|---|---|---|
 | Intel / AMD | x86_64 Desktop & Server | 1.2 GB | CLI only · install tool included |
-| Asahi-Based Project | Apple Silicon | 2.7 GB | Live KDE environment |
+| Asahi-Based Project | Apple Silicon | 2.7 GB | Live KDE environment (for simple use)|
 
 ---
 
@@ -45,7 +45,9 @@ Go through the installer and finish it — it handles partitioning, driver detec
 Do it like Arch, but use `silkdvrfetch` to extract drivers to your mount point:
 
 ```bash
-silkdvrfetch -ETR /path/to/drivers >> /mnt
+silkdvrfetch -ETR | silksend /path/to/drivers(most likely /silk/dvrs) >> /mnt
+cd /silk/dvrs
+skbuild --pkg
 ```
 
 ---
@@ -101,5 +103,5 @@ Silk is in early testing — contributions are very welcome.
 
 ## License
 
-Silk Linux is free, open-source software released under the GPL-2.0 license.  
+Silk Linux is free, open-source software released under the GNU license.  
 Silk Packages are MIT-licensed and distro-agnostic.
